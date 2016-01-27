@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using HolidayDestinations.Web.Models;
+using HolidayDestinations.Models;
 
 namespace HolidayDestinations.Web.Account
 {
