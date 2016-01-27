@@ -39,7 +39,7 @@ namespace HolidayDestinations.Web
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<HolidayDesitantionsDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<HolidayDestinationsDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<User>(manager)
             {
