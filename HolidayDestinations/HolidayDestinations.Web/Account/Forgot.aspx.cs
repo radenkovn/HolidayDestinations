@@ -1,13 +1,11 @@
-﻿using System;
-using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using HolidayDestinations.Web.Models;
-
-namespace HolidayDestinations.Web.Account
+﻿namespace HolidayDestinations.Web.Account
 {
+    using System;
+    using System.Web;
+    using System.Web.UI;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Models;
     public partial class ForgotPassword : Page
     {
         protected void Page_Load(object sender, EventArgs e)

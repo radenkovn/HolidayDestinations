@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using System.Threading.Tasks;
-using HolidayDestinations.Web.Models;
-
-namespace HolidayDestinations.Web.Account
+﻿namespace HolidayDestinations.Web.Account
 {
+    using System;
+    using System.Web;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+
     public partial class AddPhoneNumber : System.Web.UI.Page
     {
         protected void PhoneNumber_Click(object sender, EventArgs e)

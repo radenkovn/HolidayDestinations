@@ -6,7 +6,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using HolidayDestinations.Web.Models;
+using HolidayDestinations.Models;
+using HolidayDestinations.Data;
 
 namespace HolidayDestinations.Web
 {

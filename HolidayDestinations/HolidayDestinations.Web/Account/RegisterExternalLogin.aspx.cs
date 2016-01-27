@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using HolidayDestinations.Web.Models;
+using HolidayDestinations.Models;
 
 namespace HolidayDestinations.Web.Account
 {
