@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="HolidayDestinations.Web.Home" %>
+
 <asp:Content ID="HomeContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <h1>Destinations</h1>
@@ -8,73 +9,46 @@
         SelectMethod="DestinationsRepeater_GetData"
         ItemType="HolidayDestinations.Models.Destination">
         <HeaderTemplate>
-            <h2></h2>
-        </HeaderTemplate>
-
-    </asp:Repeater>
-    <%--<h1>News</h1>
-    <asp:Repeater
-        runat="server"
-        ID="ArticlesRepeater"
-        SelectMethod="ArticlesRepeater_GetData"
-        ItemType="NewsSystem.Models.Article">
-        <HeaderTemplate>
-            <h2>Most popular articles</h2>
+            <h2>Top Travel Offers</h2>
         </HeaderTemplate>
         <ItemTemplate>
             <div class="row">
-                <h3><a href="/ViewArticle.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a> <small><%#: Item.Category.Name %></small></h3>
-                <p>
-                    <%#: Item.Content.Length >= 300 ? Item.Content.Substring(0, 300) + "..." : Item.Content%>
-                </p>
-                <p>Likes: <%# Item.Likes.Count() %></p>
-                <div>
-                    <i>by <%#: Item.Author.UserName %></i>
-                    <i>created on: <%# Item.DateCreated %></i>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4 class="text-info">Picture</h4>
+                            <img class="col-md-12" src="https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg" />
+                        </div>
+                        <div class="col-md-7">
+                            <h3><a href="/viewDestination.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a> <small><%#: Item.Category.Name %></small></h3>
+                            <p>
+                                <%#: Item.Description.Length >= 500 ? Item.Description.Substring(0, 500) + "..." : Item.Description%>
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <p>Date:<%# Item.Date %> </p>
+                        <div class="text-info">
+                            Category: <%#: Item.Category.Name %>
+                        </div>
+                        <div>
+                            Stars: <%#: Item.Category.Rating %>
+                        </div>
+                        <div class="text-success">
+                            Location: <%#: Item.Location.Name %>
+                        </div>
+                        <div class="text-primary">
+                            Price:  <%#: Item.Price %>
+                        </div>
+                        <div class="text-muted">
+                            <i>by <%#: Item.User.UserName %></i>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </ItemTemplate>
     </asp:Repeater>
-
-    <asp:ListView
-        runat="server"
-        ID="lvCategories"
-        SelectMethod="lvCategories_GetData"
-        ItemType="NewsSystem.Models.Category">
-        <LayoutTemplate>
-            <h2>All categories</h2>
-
-            <div runat="server" id="itemPlaceholder"></div>
-            <asp:PlaceHolder runat="server" ID="groupPlaceHolder"></asp:PlaceHolder>
-        </LayoutTemplate>
-        <GroupTemplate>
-            <div class="row">
-                <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
-            </div>
-        </GroupTemplate>
-        <ItemTemplate>
-            <div class="col-md-12">
-                <h3><%#: Item.Name %></h3>
-                <asp:ListView
-                    runat="server"
-                    ID="lvArticlesForCategory"
-                    DataSource="<%# Item.Articles.OrderByDescending(x => x.Likes.Count()).Take(3) %>"
-                    ItemType="NewsSystem.Models.Article">
-                    <LayoutTemplate>
-                        <ul class="col-md-4">
-                            <li runat="server" id="itemPlaceholder"></li>
-                        </ul>
-                    </LayoutTemplate>
-                    <ItemTemplate>
-                        <li>
-                            <a href="ViewArticle.aspx?id=<%# Item.Id %>"><strong><%#: Item.Title %></strong> <i>by <%#: Item.Author.UserName %></i></a>
-                        </li>
-                    </ItemTemplate>
-                    <EmptyDataTemplate>
-                        <p>No articles.</p>
-                    </EmptyDataTemplate>
-                </asp:ListView>
-            </div>
-        </ItemTemplate>
-    </asp:ListView>--%>
 </asp:Content>
