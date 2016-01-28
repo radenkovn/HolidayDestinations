@@ -13,7 +13,9 @@
     public class DestinationsService : IDestinationsService
     {
         private const int DefaultLatestCount = 10;
+        private const string DefaultPhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg";
         private IRepository<Destination> destinations;
+
         public DestinationsService(IRepository<Destination> destinations)
         {
             this.destinations = destinations;
@@ -32,6 +34,16 @@
         public IQueryable<Destination> GetAll()
         {
             return this.destinations.All();
+        }
+
+        public void Create(Destination newDestination)
+        {
+            if (newDestination.PhotoUrl == null)
+            {
+                newDestination.PhotoUrl = DefaultPhotoUrl;
+            }
+            this.destinations.Add(newDestination);
+            this.destinations.SaveChanges();
         }
     }
 }
