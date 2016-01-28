@@ -22,6 +22,10 @@
 
         public DestinationType DestinationType { get; set; }
 
+        public decimal Price { get; set; }
+
+        public string Description { get; set; }
+
         public virtual ICollection<Reservation> Reservations { get { return this.reservations; } set { this.reservations = value; } }
     }
 }
