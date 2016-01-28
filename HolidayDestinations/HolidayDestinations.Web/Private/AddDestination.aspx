@@ -10,12 +10,15 @@
             <br />
             <label class="col-md-12 text-info">
                 Title:
-                <asp:TextBox Text="<%# BindItem.Title %>" ID="fvInsertTitle"  runat="server" CssClass="" />
+                <asp:TextBox Text="<%# BindItem.Title %>" ID="fvInsertTitle" runat="server" CssClass="" />
             </label>
+            <asp:RequiredFieldValidator ErrorMessage="You cannot post an empty title!" ControlToValidate="fvInsertTitle" runat="server" CssClass="text-danger" />
             <label class="col-md-12 text-info">
                 Price:
-                <asp:TextBox Text="<%# BindItem.Price %>" ID="TextBox1" runat="server" />
+                <asp:TextBox Text="<%# BindItem.Price %>" ID="fvInsertPrice" runat="server" />
             </label>
+            <asp:RequiredFieldValidator ErrorMessage="You cannot post an empty price!" ControlToValidate="fvInsertPrice" runat="server" CssClass="text-danger" />
+            <asp:CustomValidator ErrorMessage="Not a valid price!" OnServerValidate="PriceValidate" ControlToValidate="fvInsertPrice" runat="server" CssClass="text-danger" />
             <div>
                 <label class="col-md-12 text-info">
                     Category:               
@@ -49,9 +52,12 @@
             <div>
                 <label class="col-md-12 text-info">
                     Content:               
-                    <asp:TextBox Text="<%# BindItem.Description %>" ID="tbDescription" runat="server" TextMode="MultiLine" Rows="8" />
+                    <asp:TextBox Text="<%# BindItem.Description %>" ID="fvInsertDescription" runat="server" TextMode="MultiLine" Rows="8" />
                     <asp:FileUpload ID="imageUploadControl" runat="server" />
                 </label>
+                <asp:RequiredFieldValidator ErrorMessage="You cannot post an empty description!" ControlToValidate="fvInsertDescription" runat="server" CssClass="text-danger" />
+                <asp:CustomValidator ErrorMessage="Your description is too short!" OnServerValidate="DesctiptionValidate" ControlToValidate="fvInsertDescription" runat="server" CssClass="text-danger" />
+                <asp:CustomValidator ErrorMessage="Not a valid picture!" OnServerValidate="PictureValidate" ControlToValidate="imageUploadControl" runat="server" />
             </div>
             <asp:Button Text="Insert" CommandName="Insert" runat="server" CssClass="btn btn-success" />
         </InsertItemTemplate>

@@ -11,8 +11,11 @@
     using Microsoft.AspNet.Identity;
     using System.Web.UI.WebControls;
     using System.IO;
+    using System.Text.RegularExpressions;
     public partial class AddDestination : System.Web.UI.Page
     {
+        private const string PictureRegex = @"([^\s] + (\.(?i)(jpg|png|gif|bmp))$)";
+
         [Inject]
         public ILocationsService LocationsService { get; set; }
 
@@ -41,10 +44,10 @@
             {
                 string filename = Path.GetFileName(fileUploader.FileName);
                 filepath = "/Images/" + filename;
-                
+
+                var imagePath = "." + filepath;
+                newDestination.PhotoUrl = imagePath;
             }
-            filepath = "." + filepath;
-            newDestination.PhotoUrl = filepath;
             TryUpdateModel(newDestination);
             if (ModelState.IsValid)
             {
@@ -76,6 +79,26 @@
         public IQueryable<Location> ddlInsertLocation_GetData()
         {
             return this.LocationsService.GetAll();
+        }
+
+        protected void PriceValidate(object source, ServerValidateEventArgs args)
+        {
+            decimal number;
+            args.IsValid = decimal.TryParse((this.fvAddDestination.FindControl("fvInsertPrice") as TextBox).Text, out number) && number > 0;
+        }
+        protected void DesctiptionValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = (this.fvAddDestination.FindControl("fvInsertDescription") as TextBox).Text.Length >= 10;
+        }
+        protected void PictureValidate(object source, ServerValidateEventArgs args)
+        {
+            var fileUploader = (this.fvAddDestination.FindControl("imageUploadControl") as FileUpload);
+            if (fileUploader.HasFile)
+            {
+                string filename = Path.GetFileName(fileUploader.FileName);
+                Regex regex = new Regex(@"(.*?)\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF|bmp|BMP)$");
+                args.IsValid = regex.IsMatch(filename);
+            }
         }
     }
 }
