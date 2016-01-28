@@ -8,14 +8,14 @@
 
     public class User : IdentityUser
     {
-        private ICollection<Reservation> reservations;
+        //private ICollection<Reservation> reservations;
 
-        public User()
-        {
-            this.reservations = new HashSet<Reservation>();
-        }
+        //public User()
+        //{
+        //    this.reservations = new HashSet<Reservation>();
+        //}
 
-        public virtual ICollection<Reservation> Reservations { get { return this.reservations; } set { this.reservations = value; } }
+        //public virtual ICollection<Reservation> Reservations { get { return this.reservations; } set { this.reservations = value; } }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {

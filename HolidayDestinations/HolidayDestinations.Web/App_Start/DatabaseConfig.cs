@@ -1,4 +1,4 @@
-﻿namespace HolidayDestinations.Web.App_Start
+﻿namespace HolidayDestinations.Web
 {
     using System.Data.Entity;
 

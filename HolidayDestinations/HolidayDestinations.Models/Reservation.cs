@@ -18,7 +18,7 @@
         [ForeignKey("DestinationId")]
         public virtual Destination Destination { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
