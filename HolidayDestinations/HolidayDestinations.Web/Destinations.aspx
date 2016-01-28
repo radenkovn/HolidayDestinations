@@ -17,7 +17,7 @@
             <div class="row" id="itemPlaceholder" runat="server"></div>
             <br />
             <br />
-            <holidayDestinations:DestinationsPagination runat="server" ID="ReservationBook" />
+            <holidayDestinations:DestinationsPagination runat="server" ID="DestonationsPagination" />
 
         </LayoutTemplate>
         <ItemTemplate>
