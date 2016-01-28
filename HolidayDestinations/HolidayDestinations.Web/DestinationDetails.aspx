@@ -5,7 +5,7 @@
         SelectMethod="fvDestination_GetItem"
         ItemType="HolidayDestinations.Models.Destination">
         <ItemTemplate>
-            <table cellspacing="0" style="border-collapse: collapse;">
+            <table style="border-collapse: collapse;">
                 <tbody>
                     <tr>
                         <td colspan="2">
@@ -37,7 +37,9 @@
     </asp:FormView>
     <asp:LoginView runat="server" ViewStateMode="Disabled">
         <LoggedInTemplate>
-            <holidayDestinations:ReservationBook runat="server" ID="ReservationBook"/>
+            <div class="text-center">
+                <holidayDestinations:ReservationBook runat="server" ID="ReservationBook" />
+            </div>
         </LoggedInTemplate>
     </asp:LoginView>
 </asp:Content>
