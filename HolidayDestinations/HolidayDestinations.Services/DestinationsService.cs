@@ -28,5 +28,10 @@
         {
             return this.destinations.GetById(id);
         }
+
+        public IQueryable<Destination> GetAll()
+        {
+            return this.destinations.All();
+        }
     }
 }

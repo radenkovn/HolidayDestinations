@@ -11,5 +11,8 @@
     {
         IQueryable<Destination> GetLatest();
         Destination GetById(int id);
+
+        IQueryable<Destination> GetAll();
+
     }
 }
