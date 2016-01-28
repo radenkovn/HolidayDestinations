@@ -1,7 +1,7 @@
 namespace HolidayDestinations.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-
+    using System.Linq;
     public sealed class Configuration : DbMigrationsConfiguration<HolidayDestinationsDbContext>
     {
         public Configuration()
@@ -12,18 +12,27 @@ namespace HolidayDestinations.Data.Migrations
 
         protected override void Seed(HolidayDestinationsDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            if (context.Destinations.Any())
+            {
+                return;
+            }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var seed = new Seed(new Models.User()
+            {
+                UserName = "BestTrips"
+            });
+
+            context.Users.Add(seed.Author);
+
+            context.SaveChanges();
+
+            seed.Categories.ForEach(x => context.Categories.Add(x));
+
+            seed.Locations.ForEach(x => context.Locations.Add(x));
+
+            seed.Destinations.ForEach(x => context.Destinations.Add(x));
+
+            context.SaveChanges();
         }
     }
 }
