@@ -224,6 +224,7 @@
     <Content Include="Content\BootstrapMaterial\ripples.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\HomePagination.ascx" />
+    <Content Include="DestinationDetails.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -405,6 +406,13 @@
     </Compile>
     <Compile Include="Controls\HomePagination.ascx.designer.cs">
       <DependentUpon>HomePagination.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DestinationDetails.aspx.cs">
+      <DependentUpon>DestinationDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DestinationDetails.aspx.designer.cs">
+      <DependentUpon>DestinationDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
