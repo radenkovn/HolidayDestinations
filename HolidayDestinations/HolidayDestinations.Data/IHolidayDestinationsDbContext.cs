@@ -12,6 +12,10 @@
 
         IDbSet<User> Users { get; set; }
 
+        IDbSet<Destination> Destinations { get; set; }
+
+        IDbSet<Reservation> Reservations { get; set; }
+
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
