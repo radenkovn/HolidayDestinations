@@ -13,6 +13,6 @@
         Destination GetById(int id);
 
         IQueryable<Destination> GetAll();
-
+        void Create(Destination newDestination);
     }
 }

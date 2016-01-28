@@ -33,5 +33,11 @@
         {
             return this.destinations.All();
         }
+
+        public void Create(Destination newDestination)
+        {
+            this.destinations.Add(newDestination);
+            this.destinations.SaveChanges();
+        }
     }
 }

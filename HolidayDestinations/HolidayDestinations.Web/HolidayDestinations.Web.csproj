@@ -217,6 +217,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Private\AddDestination.aspx" />
     <Content Include="Private\Reservations.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
@@ -373,6 +374,13 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Private\AddDestination.aspx.cs">
+      <DependentUpon>AddDestination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Private\AddDestination.aspx.designer.cs">
+      <DependentUpon>AddDestination.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Private\Reservations.aspx.cs">
       <DependentUpon>Reservations.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -502,6 +510,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cache\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
