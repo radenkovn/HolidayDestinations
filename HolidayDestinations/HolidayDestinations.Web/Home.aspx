@@ -20,7 +20,7 @@
                             <img class="col-md-12" src="https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg" />
                         </div>
                         <div class="col-md-7">
-                            <h3><a href="/viewDestination.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a> <small><%#: Item.Category.Name %></small></h3>
+                            <h3><a href="/DestinationDetails.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a> <small><%#: Item.Category.Name %></small></h3>
                             <p>
                                 <%#: Item.Description.Length >= 500 ? Item.Description.Substring(0, 500) + "..." : Item.Description%>
                             </p>
