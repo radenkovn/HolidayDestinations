@@ -24,12 +24,24 @@
 
         public DateTime Date { get; set; }
 
+        public int LocationId { get; set; }
+
+        [ForeignKey("LocationId")]
+        public virtual Location Location { get; set; }
+
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
         public decimal Price { get; set; }
 
         public string Description { get; set; }
+
+        public string Title { get; set; }
+
+        public string UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
 
         public virtual ICollection<Reservation> Reservations { get { return this.reservations; } set { this.reservations = value; } }
     }
