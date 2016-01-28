@@ -30,8 +30,14 @@
             var result = this.DestinationsService.GetAll();
 
             // TODO: validate orderBy parameter
-
-            result = orderBy != null ? result.OrderBy(orderBy + " "+ OrderType) : result.OrderBy(x => x.Id);
+            try
+            {
+                result = orderBy != null ? result.OrderBy(orderBy + " " + OrderType) : result.OrderBy(x => x.Id);
+            }
+            catch
+            {
+                Response.Redirect("/Destinations");
+            }
 
             return result;
         }

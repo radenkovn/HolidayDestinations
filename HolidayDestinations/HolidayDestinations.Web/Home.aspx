@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <h4 class="text-info">Picture</h4>
-                            <img class="col-md-12" src="https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg" />
+                            <img class="col-md-12" src=<%#: Item.PhotoUrl %> />
                         </div>
                         <div class="col-md-7">
                             <h3><a href="/DestinationDetails.aspx?id=<%# Item.Id %>"><%#: Item.Title %></a> <small><%#: Item.Category.Name %></small></h3>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="row">
-                        <p>Date:<%# Item.Date %> </p>
+                        <p>Date:<%#: Item.Date %> </p>
                         <div class="text-info">
                             Category: <%#: Item.Category.Name %>
                         </div>

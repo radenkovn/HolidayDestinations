@@ -44,6 +44,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl= "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -55,6 +56,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -66,6 +68,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -77,6 +80,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -88,6 +92,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -99,6 +104,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -110,6 +116,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -121,6 +128,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -132,6 +140,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -143,6 +152,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -154,6 +164,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 
@@ -165,6 +176,7 @@ namespace HolidayDestinations.Data.Migrations
                 User = user,
                 Date = DateTime.Now.AddDays(Rand.Next(0, Rand.Next(1, 10))),
                 Location = Locations[Rand.Next(0, 4)],
+                PhotoUrl = "https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg",
                 Price = Rand.Next(50, 150)
             });
 

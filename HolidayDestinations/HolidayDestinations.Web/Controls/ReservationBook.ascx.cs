@@ -26,7 +26,7 @@
             var currentDestinationId = int.Parse(this.Request.QueryString["id"]);
             this.ReservationsService.CreateReservation(currentUserId, currentDestinationId);
 
-            this.Response.Redirect("/Account/Reservations");
+            this.Response.Redirect("/Private/Reservations");
         }
     }
 }

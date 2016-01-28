@@ -21,7 +21,7 @@
                     </tr>
                     <tr>
                         <td class="row">
-                            <img class="col-lg-12" src="https://palacestation.sclv.com/~/media/Images/Page%20Background%20Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg" />
+                            <img class="col-lg-12" src=<%# Item.PhotoUrl %>  />
                         </td>
                     </tr>
                 </tbody>
