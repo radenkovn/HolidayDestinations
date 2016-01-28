@@ -1,18 +1,16 @@
-﻿using HolidayDestinations.Models;
-using HolidayDestinations.Services.Contracts;
-using Ninject;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace HolidayDestinations.Web
+﻿namespace HolidayDestinations.Web
 {
+    using System;
+    using System.Collections;
+    using System.Linq;
+    using System.Web.ModelBinding;
+
+    using HolidayDestinations.Services.Contracts;
+    using Ninject;
+
     public partial class Home : System.Web.UI.Page
     {
+        private const int DefaultPageSize = 5;
 
         [Inject]
         public IDestinationsService DestinationsService { get; set; }
@@ -22,10 +20,23 @@ namespace HolidayDestinations.Web
 
         }
 
-        public IEnumerable DestinationsRepeater_GetData()
+        public IEnumerable DestinationsRepeater_GetData([QueryString]string page)
         {
-            var destinations = this.DestinationsService.GetLatest();
-            return destinations;
+            int currentPage;
+            var firstPage = this.DestinationsService.GetLatest().Take(DefaultPageSize);
+            if (!int.TryParse(page, out currentPage))
+            {
+                return firstPage;
+            }
+            if (currentPage == 1)
+            {
+                return firstPage;
+            }
+            if (currentPage == 2)
+            {
+                return this.DestinationsService.GetLatest().Skip(DefaultPageSize).Take(DefaultPageSize);
+            }
+            return firstPage;
         }
     }
 }

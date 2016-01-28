@@ -50,5 +50,8 @@
 
             </div>
         </ItemTemplate>
+        <FooterTemplate>
+            <holidayDestinations:HomePagination runat="server" ID="homePagination"/>
+        </FooterTemplate>
     </asp:Repeater>
 </asp:Content>
