@@ -24,6 +24,7 @@
         {
             int currentPage;
             var firstPage = this.DestinationsService.GetLatest().Take(DefaultPageSize);
+            var secondPage = this.DestinationsService.GetLatest().Skip(DefaultPageSize).Take(DefaultPageSize);
             if (!int.TryParse(page, out currentPage))
             {
                 return firstPage;
@@ -32,9 +33,9 @@
             {
                 return firstPage;
             }
-            if (currentPage == 2)
+            if (currentPage == 2 && secondPage.Count() != 0)
             {
-                return this.DestinationsService.GetLatest().Skip(DefaultPageSize).Take(DefaultPageSize);
+                return secondPage;
             }
             return firstPage;
         }

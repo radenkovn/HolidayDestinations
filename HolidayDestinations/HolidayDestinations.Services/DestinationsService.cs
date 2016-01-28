@@ -23,5 +23,10 @@
             var timeToCompare = DateTime.Now;
             return this.destinations.All().Where(x => DbFunctions.DiffDays(timeToCompare, x.Date) > 0).OrderBy(x => x.Date).Take(DefaultLatestCount);
         }
+
+        public Destination GetById(int id)
+        {
+            return this.destinations.GetById(id);
+        }
     }
 }

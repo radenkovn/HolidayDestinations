@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IDestinationsService.cs" />
+    <Compile Include="Contracts\IReservationsService.cs" />
     <Compile Include="DestinationsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

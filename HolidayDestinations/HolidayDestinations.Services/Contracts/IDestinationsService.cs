@@ -10,5 +10,6 @@
     public interface IDestinationsService
     {
         IQueryable<Destination> GetLatest();
+        Destination GetById(int id);
     }
 }
