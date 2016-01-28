@@ -7,11 +7,16 @@
         ItemType="HolidayDestinations.Models.Destination"
         DefaultMode="Insert">
         <InsertItemTemplate>
-            <h3>Title:
-               
-                <asp:TextBox Text="<%# BindItem.Title %>" ID="fvInsertTitle" runat="server" />
-            </h3>
-            <p>
+            <br />
+            <label class="col-md-12 text-info">
+                Title:
+                <asp:TextBox Text="<%# BindItem.Title %>" ID="fvInsertTitle"  runat="server" CssClass="" />
+            </label>
+            <label class="col-md-12 text-info">
+                Price:
+                <asp:TextBox Text="<%# BindItem.Price %>" ID="TextBox1" runat="server" />
+            </label>
+            <div>
                 <label class="col-md-12 text-info">
                     Category:               
                     <asp:DropDownList
@@ -25,9 +30,9 @@
                     </asp:DropDownList>
 
                 </label>
-            </p>
+            </div>
 
-            <p>
+            <div>
                 <label class="col-md-12 text-info">
                     Location:               
                     <asp:DropDownList
@@ -40,12 +45,14 @@
                         CssClass="form-control text-primary">
                     </asp:DropDownList>
                 </label>
-            </p>
-            <p>
-                Content:               
-                <asp:TextBox Text="<%# BindItem.Description %>" ID="tbDescription" runat="server" TextMode="MultiLine" Rows="8" />
-                <asp:FileUpload ID="imageUploadControl" runat="server" />
-            </p>
+            </div>
+            <div>
+                <label class="col-md-12 text-info">
+                    Content:               
+                    <asp:TextBox Text="<%# BindItem.Description %>" ID="tbDescription" runat="server" TextMode="MultiLine" Rows="8" />
+                    <asp:FileUpload ID="imageUploadControl" runat="server" />
+                </label>
+            </div>
             <asp:Button Text="Insert" CommandName="Insert" runat="server" CssClass="btn btn-success" />
         </InsertItemTemplate>
     </asp:FormView>

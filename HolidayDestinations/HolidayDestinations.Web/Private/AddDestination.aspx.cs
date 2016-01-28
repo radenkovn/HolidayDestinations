@@ -41,7 +41,7 @@
             {
                 string filename = Path.GetFileName(fileUploader.FileName);
                 filepath = "/Images/" + filename;
-                fileUploader.SaveAs(Server.MapPath("~" + filepath));
+                
             }
             filepath = "." + filepath;
             newDestination.PhotoUrl = filepath;
@@ -56,7 +56,16 @@
                 {
                     Response.Redirect("/Private/AddDestination");
                 }
+                if (fileUploader.HasFile)
+                {
+                    fileUploader.SaveAs(Server.MapPath("~" + filepath));
+                }
             }
+            else
+            {
+                Response.Redirect("/Private/AddDestination");
+            }
+            Response.Redirect("/Home");
         }
 
         public IQueryable<Category> ddlInsertCategory_GetData()

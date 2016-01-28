@@ -374,6 +374,7 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Cache\CachedData.cs" />
     <Compile Include="Private\AddDestination.aspx.cs">
       <DependentUpon>AddDestination.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -509,7 +510,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cache\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
