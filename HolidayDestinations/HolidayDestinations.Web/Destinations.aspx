@@ -6,23 +6,24 @@
         ItemType="HolidayDestinations.Models.Destination"
         SelectMethod="lvDestinations_GetData">
         <LayoutTemplate>
-            <asp:HyperLink NavigateUrl="?orderBy=Date" runat="server" CssClass="btn btn-sm btn-info"></asp:HyperLink>
-            <asp:HyperLink NavigateUrl="?orderBy=Category.Name" runat="server" CssClass="btn btn-sm btn-info"></asp:HyperLink>
-            <asp:HyperLink NavigateUrl="?orderBy=Price" runat="server" CssClass="btn btn-sm btn-info"></asp:HyperLink>
-            <asp:HyperLink NavigateUrl="?orderBy=Location.Name" runat="server" CssClass="btn btn-sm btn-info"></asp:HyperLink>
+            <asp:HyperLink NavigateUrl="?orderBy=Date" Text="Date" runat="server" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
+            <asp:HyperLink NavigateUrl="?orderBy=Category.Name" Text="Name" runat="server" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
+            <asp:HyperLink NavigateUrl="?orderBy=Price" runat="server" Text="Price" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
+            <asp:HyperLink NavigateUrl="?orderBy=Location.Name" runat="server" Text="Location" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
 
             <div class="row" id="itemPlaceholder" runat="server"></div>
             <br />
             <br />
             <asp:DataPager runat="server" PageSize="5">
                 <Fields>
-                    <asp:NextPreviousPagerField ShowPreviousPageButton="true"  ShowNextPageButton="false" ButtonCssClass="btn btn-primary"/>
-                    <asp:NextPreviousPagerField ShowPreviousPageButton="false"  ShowNextPageButton="true" ButtonCssClass="btn btn-primary"/>
+                    <asp:NextPreviousPagerField ShowPreviousPageButton="true" ShowNextPageButton="false" ButtonCssClass="btn btn-primary" />
+                    <asp:NumericPagerField />
+                    <asp:NextPreviousPagerField ShowPreviousPageButton="false" ShowNextPageButton="true" ButtonCssClass="btn btn-primary" />
                 </Fields>
             </asp:DataPager>
         </LayoutTemplate>
         <ItemTemplate>
-<div class="row">
+            <div class="row">
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-4">
@@ -57,7 +58,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </ItemTemplate>
 

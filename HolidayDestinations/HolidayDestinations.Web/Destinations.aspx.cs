@@ -10,6 +10,7 @@
 
     public partial class Destinations : System.Web.UI.Page
     {
+        private const string OrderType = "Descending";
         [Inject]
         public IDestinationsService DestinationsService { get; set; }
 
@@ -30,7 +31,7 @@
 
             // TODO: validate orderBy parameter
 
-            result = orderBy != null ? result.OrderBy(orderBy + " Ascending") : result.OrderBy(x => x.Id);
+            result = orderBy != null ? result.OrderBy(orderBy + " "+ OrderType) : result.OrderBy(x => x.Id);
 
             return result;
         }
