@@ -36,7 +36,13 @@
             {
                 mappedReservations.Add(new ReservationResponseModel(reservation));
             }
-            return mappedReservations.AsQueryable().OrderByDescending(x => x.DateOfReservation);
+            var reservationsToReturn = mappedReservations.AsQueryable().OrderByDescending(x => x.DateOfReservation);
+            if (reservationsToReturn.Count() == 0)
+            {
+                this.FailureText.Text = "No Reservations found!";
+                this.ErrorMessage.Visible = true;
+            }
+            return reservationsToReturn;
         }
     }
 }

@@ -1,16 +1,14 @@
 ﻿namespace HolidayDestinations.Web
 {
     using System;
-    using System.Collections;
     using System.Linq;
     using System.Web.ModelBinding;
 
     using HolidayDestinations.Services.Contracts;
     using Ninject;
     using Models;
-    using System.Collections.Generic;
-    using System.IO;
     using Cache;
+
     public partial class Home : System.Web.UI.Page
     {
         private const int DefaultPageSize = 5;
@@ -23,7 +21,7 @@
 
         }
 
-        public IEnumerable DestinationsRepeater_GetData([QueryString]string page)
+        public IQueryable<Destination> DestinationsRepeater_GetData([QueryString]string page)
         {
             if (CachedData.cachedDestinations == null)
             {
