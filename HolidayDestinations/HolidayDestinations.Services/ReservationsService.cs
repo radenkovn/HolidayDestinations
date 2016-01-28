@@ -29,5 +29,10 @@ namespace HolidayDestinations.Services
             this.reservations.Add(reservationToAdd);
             this.reservations.SaveChanges();
         }
+
+        public IQueryable<Reservation> GetAllByUser(string userId)
+        {
+            return this.reservations.All().Where(x => x.UserId == userId);
+        }
     }
 }

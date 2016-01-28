@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HolidayDestinations.Services.Contracts
+﻿namespace HolidayDestinations.Services.Contracts
 {
+    using System.Linq;
+
+    using HolidayDestinations.Models;
+    
     public interface IReservationsService
     {
         void CreateReservation(string userId, int destinationId);
+
+        IQueryable<Reservation> GetAllByUser(string userId);
     }
 }
