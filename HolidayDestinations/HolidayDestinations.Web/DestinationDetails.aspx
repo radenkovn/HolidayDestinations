@@ -9,7 +9,7 @@
                 <tbody>
                     <tr>
                         <td colspan="2">
-                            <h2><%#: Item.Title %> <small>Category: <%# Item.Category.Name %></small></h2>
+                            <h2><%#: Item.Title %> <small>Category: <%#: Item.Category.Name %></small></h2>
                             <p>
                                 <%#: Item.Description %>
                             </p>
@@ -37,7 +37,7 @@
     </asp:FormView>
     <asp:LoginView runat="server" ViewStateMode="Disabled">
         <LoggedInTemplate>
-            <asp:Button Text="Book" ID="btnBook" OnClick="btnBook_Click" runat="server" />
+            <holidayDestinations:ReservationBook runat="server" ID="ReservationBook"/>
         </LoggedInTemplate>
     </asp:LoginView>
 </asp:Content>

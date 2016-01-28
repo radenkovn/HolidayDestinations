@@ -213,6 +213,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\Reservations.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
@@ -224,6 +225,7 @@
     <Content Include="Content\BootstrapMaterial\ripples.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\HomePagination.ascx" />
+    <Content Include="Controls\ReservationBook.ascx" />
     <Content Include="DestinationDetails.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -365,6 +367,13 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Reservations.aspx.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Reservations.aspx.designer.cs">
+      <DependentUpon>Reservations.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -406,6 +415,13 @@
     </Compile>
     <Compile Include="Controls\HomePagination.ascx.designer.cs">
       <DependentUpon>HomePagination.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReservationBook.ascx.cs">
+      <DependentUpon>ReservationBook.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ReservationBook.ascx.designer.cs">
+      <DependentUpon>ReservationBook.ascx</DependentUpon>
     </Compile>
     <Compile Include="DestinationDetails.aspx.cs">
       <DependentUpon>DestinationDetails.aspx</DependentUpon>
