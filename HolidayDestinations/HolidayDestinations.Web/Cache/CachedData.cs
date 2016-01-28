@@ -1,11 +1,12 @@
 ﻿namespace HolidayDestinations.Web.Cache
 {
     using System;
-    using HolidayDestinations.Models;
+    using Models;
     using System.Linq;
-    public class CachedData
+
+    public static class CachedData
     {
-        private IQueryable<Destination> cachedDestinations;
-        private DateTime cachedDate;
+        public static IQueryable<Destination> cachedDestinations;
+        public static DateTime cachedDate;
     }
 }
