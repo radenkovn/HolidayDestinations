@@ -2,7 +2,7 @@
 
 <asp:UpdatePanel runat="server" ID="UpdatePanel">
     <ContentTemplate>
-        <asp:Button Text="Book" ID="btnBook" OnClick="btnBook_Click" runat="server"></asp:Button>
+        <asp:Button Text="Book" ID="btnBook" OnClick="btnBook_Click" runat="server" CssClass="btn btn-primary"></asp:Button>
     </ContentTemplate>
     <Triggers>
         <asp:AsyncPostBackTrigger ControlID="btnBook" EventName="Click" />

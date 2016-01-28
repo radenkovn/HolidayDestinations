@@ -7,10 +7,14 @@
 
     using HolidayDestinations.Services.Contracts;
     using Ninject;
-
+    using Models;
+    using System.Collections.Generic;
+    using System.IO;
     public partial class Home : System.Web.UI.Page
     {
         private const int DefaultPageSize = 5;
+        private IQueryable<Destination> cachedDestinations;
+        private DateTime cachedDate;
 
         [Inject]
         public IDestinationsService DestinationsService { get; set; }
@@ -22,9 +26,22 @@
 
         public IEnumerable DestinationsRepeater_GetData([QueryString]string page)
         {
+            if (this.cachedDestinations == null)
+            {
+                this.cachedDestinations = this.DestinationsService.GetLatest().ToList().AsQueryable();
+                this.cachedDate = DateTime.Now;
+            }
+            else
+            {
+                if (this.cachedDate.AddMinutes(5) < DateTime.Now)
+                {
+                    this.cachedDestinations = this.DestinationsService.GetLatest().ToList().AsQueryable();
+                    this.cachedDate = DateTime.Now;
+                }
+            }
             int currentPage;
-            var firstPage = this.DestinationsService.GetLatest().Take(DefaultPageSize);
-            var secondPage = this.DestinationsService.GetLatest().Skip(DefaultPageSize).Take(DefaultPageSize);
+            var firstPage = this.cachedDestinations.Take(DefaultPageSize);
+            var secondPage = this.cachedDestinations.Skip(DefaultPageSize).Take(DefaultPageSize);
             if (!int.TryParse(page, out currentPage))
             {
                 return firstPage;

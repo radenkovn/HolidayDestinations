@@ -9,7 +9,8 @@
 
     using HolidayDestinations.Models;
     using Services.Contracts;
-
+    using MappedModels;
+    using System.Collections.Generic;
     public partial class Reservations : Page
     {
         [Inject]
@@ -26,10 +27,16 @@
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public IQueryable<Reservation> gvReservations_GetData()
+        public IQueryable<ReservationResponseModel> gvReservations_GetData()
         {
             var userId = this.Page.User.Identity.GetUserId();
-            return this.ReservationsService.GetAllByUser(userId);
+            var currentReservations = this.ReservationsService.GetAllByUser(userId).ToList().ToList();
+            var mappedReservations = new List<ReservationResponseModel>();
+            foreach (var reservation in currentReservations)
+            {
+                mappedReservations.Add(new ReservationResponseModel(reservation));
+            }
+            return mappedReservations.AsQueryable().OrderByDescending(x => x.DateOfReservation);
         }
     }
 }
