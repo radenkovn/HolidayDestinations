@@ -15,6 +15,10 @@
         IDbSet<Destination> Destinations { get; set; }
 
         IDbSet<Reservation> Reservations { get; set; }
+            
+        IDbSet<Category> Categories { get; set; }
+
+        IDbSet<Location> Locations { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 

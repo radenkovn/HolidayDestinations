@@ -14,6 +14,10 @@
 
         public IDbSet<Reservation> Reservations { get; set; }
 
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Location> Locations { get; set; }
+
         public static HolidayDestinationsDbContext Create()
         {
             return new HolidayDestinationsDbContext();

@@ -22,6 +22,8 @@
 
         public int CategoryId { get; set; }
 
+        public DateTime Date { get; set; }
+
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
