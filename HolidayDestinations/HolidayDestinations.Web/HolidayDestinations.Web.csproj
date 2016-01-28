@@ -228,6 +228,7 @@
     <Content Include="Content\BootstrapMaterial\bootstrap.min.css" />
     <Content Include="Content\BootstrapMaterial\ripples.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controls\DestinationsPagination.ascx" />
     <Content Include="Controls\HomePagination.ascx" />
     <Content Include="Controls\ReservationBook.ascx" />
     <Content Include="DestinationDetails.aspx" />
@@ -414,6 +415,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controls\DestinationsPagination.ascx.cs">
+      <DependentUpon>DestinationsPagination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DestinationsPagination.ascx.designer.cs">
+      <DependentUpon>DestinationsPagination.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\HomePagination.ascx.cs">
       <DependentUpon>HomePagination.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

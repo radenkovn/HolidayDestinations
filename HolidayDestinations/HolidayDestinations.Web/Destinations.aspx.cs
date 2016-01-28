@@ -25,7 +25,7 @@
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public IQueryable<HolidayDestinations.Models.Destination> lvDestinations_GetData([QueryString]string orderBy)
+        public IQueryable<Models.Destination> lvDestinations_GetData([QueryString]string orderBy)
         {
             var result = this.DestinationsService.GetAll();
 

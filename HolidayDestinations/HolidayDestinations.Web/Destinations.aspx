@@ -6,21 +6,19 @@
         ItemType="HolidayDestinations.Models.Destination"
         SelectMethod="lvDestinations_GetData">
         <LayoutTemplate>
-            <asp:HyperLink NavigateUrl="?orderBy=Date" Text="Date" runat="server" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
-            <asp:HyperLink NavigateUrl="?orderBy=Category.Name" Text="Name" runat="server" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
-            <asp:HyperLink NavigateUrl="?orderBy=Price" runat="server" Text="Price" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
-            <asp:HyperLink NavigateUrl="?orderBy=Location.Name" runat="server" Text="Location" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
-
+            <br />
+            <div>
+                <label class="text-primary">Order by: </label>
+                <asp:HyperLink NavigateUrl="?orderBy=Date" Text="Date" runat="server" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
+                <asp:HyperLink NavigateUrl="?orderBy=Category.Name" Text="Name" runat="server" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
+                <asp:HyperLink NavigateUrl="?orderBy=Price" runat="server" Text="Price" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
+                <asp:HyperLink NavigateUrl="?orderBy=Location.Name" runat="server" Text="Location" CssClass="btn btn-sm btn-primary"></asp:HyperLink>
+            </div>
             <div class="row" id="itemPlaceholder" runat="server"></div>
             <br />
             <br />
-            <asp:DataPager runat="server" PageSize="5">
-                <Fields>
-                    <asp:NextPreviousPagerField ShowPreviousPageButton="true" ShowNextPageButton="false" ButtonCssClass="btn btn-primary" />
-                    <asp:NumericPagerField />
-                    <asp:NextPreviousPagerField ShowPreviousPageButton="false" ShowNextPageButton="true" ButtonCssClass="btn btn-primary" />
-                </Fields>
-            </asp:DataPager>
+            <holidayDestinations:DestinationsPagination runat="server" ID="ReservationBook" />
+
         </LayoutTemplate>
         <ItemTemplate>
             <div class="row">
