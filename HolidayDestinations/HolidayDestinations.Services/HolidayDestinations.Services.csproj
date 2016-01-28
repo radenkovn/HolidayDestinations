@@ -57,11 +57,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDestinationsService.cs" />
+    <Compile Include="DestinationsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HolidayDestinations.Data\HolidayDestinations.Data.csproj">
+      <Project>{6c433ed1-c9e4-4464-af81-31355738d294}</Project>
+      <Name>HolidayDestinations.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HolidayDestinations.Models\HolidayDestinations.Models.csproj">
+      <Project>{251ec757-4740-4f06-bd15-9c0712e43f47}</Project>
+      <Name>HolidayDestinations.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
