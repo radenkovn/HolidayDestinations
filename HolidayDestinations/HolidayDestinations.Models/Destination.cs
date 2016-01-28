@@ -20,7 +20,10 @@
 
         public string PhotoUrl { get; set; }
 
-        public DestinationType DestinationType { get; set; }
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
 
         public decimal Price { get; set; }
 
