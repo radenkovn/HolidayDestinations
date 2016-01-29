@@ -23,6 +23,7 @@
 
         public IQueryable<Destination> DestinationsRepeater_GetData([QueryString]string page)
         {
+            Response.Cache.SetCacheability(System.Web.HttpCacheability.Public);
             if (CachedData.cachedDestinations == null)
             {
                 CachedData.cachedDestinations = this.DestinationsService.GetLatest().ToList().AsQueryable();

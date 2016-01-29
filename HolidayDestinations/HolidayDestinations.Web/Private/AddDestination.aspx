@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddDestination.aspx.cs" Inherits="HolidayDestinations.Web.Private.AddDestination" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddDestination.aspx.cs" ValidateRequest="false" Inherits="HolidayDestinations.Web.Private.AddDestination" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView ID="fvAddDestination"
@@ -10,12 +10,12 @@
             <br />
             <label class="col-md-12 text-info">
                 Title:
-                <asp:TextBox Text="<%# BindItem.Title %>" ID="fvInsertTitle" runat="server" CssClass="" />
+                <asp:TextBox Text="<%#: BindItem.Title %>" ID="fvInsertTitle" runat="server" CssClass="" />
             </label>
             <asp:RequiredFieldValidator ErrorMessage="You cannot post an empty title!" ControlToValidate="fvInsertTitle" runat="server" CssClass="text-danger" />
             <label class="col-md-12 text-info">
                 Price:
-                <asp:TextBox Text="<%# BindItem.Price %>" ID="fvInsertPrice" runat="server" />
+                <asp:TextBox Text="<%#: BindItem.Price %>" ID="fvInsertPrice" runat="server" />
             </label>
             <asp:RequiredFieldValidator ErrorMessage="You cannot post an empty price!" ControlToValidate="fvInsertPrice" runat="server" CssClass="text-danger" />
             <asp:CustomValidator ErrorMessage="Not a valid price!" OnServerValidate="PriceValidate" ControlToValidate="fvInsertPrice" runat="server" CssClass="text-danger" />
@@ -28,7 +28,7 @@
                         DataTextField="Name"
                         DataValueField="Id"
                         SelectMethod="ddlInsertCategory_GetData"
-                        SelectedValue="<%# BindItem.CategoryId %>"
+                        SelectedValue="<%#: BindItem.CategoryId %>"
                         CssClass="form-control text-primary">
                     </asp:DropDownList>
 
